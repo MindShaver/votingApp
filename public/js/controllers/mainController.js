@@ -1,3 +1,4 @@
-angular.module("votingApp").controller("mainController", ['$scope', function($scope){
+/* global app */
+app.controller("mainController", function($scope){
             $scope.name = "Robert";
-        }])
+        })
