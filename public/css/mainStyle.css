@@ -1,0 +1,26 @@
+.pollClass {
+    background-color: #999;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+#removeX {
+    
+    text-decoration: none;
+    display: block;
+    position: relative;
+    float: left;
+    font-size: 18px;
+   
+    
+}
+
+.pollContent {
+    clear: both;
+    font-size: 400px;
+    text-align: center;
+    color: #fff;
+}
+
+

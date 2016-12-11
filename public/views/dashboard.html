@@ -1,0 +1,18 @@
+<div class="text-center">
+    <form>
+        <label for="pollName">Poll Title</label>
+        <input type="text" ng-model="formData.title" required /><br/>
+        <label for="pollBody">Poll Body</label>
+        <input type="text" ng-model="formData.body" required /><br/>
+        <button type="submit" ng-click="createPoll()">Create Poll</button>
+    </form>
+</div>
+            
+<div class="contatiner pollClass" ng-repeat="poll in polls">
+    <a href="#/dashboard" id="removeX" ng-click="removePoll(poll._id)">X</a>
+        <a href="/#/dashboard/{{$index}}"
+        <div class="pollContent">
+            <p class="text-center">{{poll.title}}</p>
+        </div>
+    </a>
+</div>

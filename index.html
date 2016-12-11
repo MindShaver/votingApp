@@ -1,46 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/mainStyle.css" />
     <meta charset="UTF-8">
     <title>MindShaver's Polling Booth</title>
 </head>
-<body ng-app="votingApp">
-    <div class="container-fluid" ng-controller="mainController">
-        <div class="jumbotron" style="margin-top: 50px">
-            <h1 class="text-center">MindShaver's Polls</h1>
-            <div>
-            <div class="text-center">
-                <form>
-                <label for="pollName">Poll Title</label>
-                <input type="text" ng-model="formData.text" required />
-                <p>{{name}}</p>
-                <button type="submit" ng-click="createPoll()">Create Poll</button>
-                </form>
-            </div>
-            
-            <div class="contatiner" ng-repeat="poll in polls">
-                <p class="text-center">{{poll.title}}</p>
-                <a href="#" ng-click="removePoll(poll._id)">X</a>
-            </div>
-        </div>
-        </div>
-    </div>
- 
- <!-- scripts -->
- 
- <!-- vendor -->
- <script src="/js/vendor/jquery-3.1.1.min.js"></script>
- <script src="/js/vendor/angular.min.js"></script>
- <!-- modules -->
- <script src="/js/app.js"></script>
- <!-- services -->
- 
- <!-- directives -->
- 
- <!-- controllers -->
- <script src="/js/controllers/mainController.js"></script>
 
-</body>
+    <body ng-app="votingApp">
+        <div class="container-fluid">
+            <div class="jumbotron" style="margin-top: 50px">
+                <h1 class="text-center">MindShaver's Polls</h1>
+                
+                <div ng-view></div>
+                
+            </div>
+        </div>
+ 
+                     <!-- scripts -->
+ 
+                     <!-- vendor -->
+         <script src="/js/vendor/jquery-3.1.1.min.js"></script>
+         <script src="/js/vendor/angular.min.js"></script>
+         <script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
+                     <!-- modules -->
+         <script src="/js/app.js"></script>
+                     <!-- services -->
+ 
+                     <!-- directives -->
+ 
+                     <!-- controllers -->
+         <script src="/js/controllers/mainController.js"></script>
+         <script src="/js/controllers/pollController.js"></script>
+
+    </body>
 </html>

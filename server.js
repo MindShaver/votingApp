@@ -16,7 +16,8 @@ app.engine('.html', require('ejs').renderFile); // Defines our default engine, i
 app.set('view engine', 'html'); // Sets our default engine, in this case HTML
 
 var Polls = mongoose.model('poll', { 
-    title: String
+    title: String,
+    body: String
 }) // Now all of our polls are modeled after this, and makes it easier to work with.
 
 app.get('/api/polls', function(req, res){   // Reach out to our API and return all the polls
@@ -27,10 +28,13 @@ app.get('/api/polls', function(req, res){   // Reach out to our API and return a
 });
 
 app.post('/api/polls', function(req, res){     // Reaches out to our API and creates polls with a POST method.
-    var title = req.body.text;
+    // req.body.{{attribute you want from JSON}}
+    var title = req.body.title;
+    var body = req.body.body;
     Polls.create(
         {
-        "title": title
+        "title": title,
+        "body": body
         }
         , function(err, data) {
                 if(err) console.log(err);
