@@ -5,19 +5,28 @@ app.controller("mainController", function($scope, $http){
             
     $http.get('api/polls')
         .success(function(data) {
-            console.log(data);
             $scope.polls = data;
         });
+        
+    $scope.removePoll = function(id) {
+        $http.delete('/api/polls/' + id)
+            .success(function(results) {
+                $scope.polls = results;
+            })
+            .error(function(err) {
+                throw err;
+            });
+    }   
             
     $scope.createPoll = function() {
         $http.post('/api/polls', $scope.formData)
             .success(function(data) {
-                alert("Success");
                 $scope.formData = {};
                 $scope.polls = data;
             })
             .error(function(err){
-                alert(err);
-            })
+                throw err;
+            });
         }
-    })
+    });
+    

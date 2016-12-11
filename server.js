@@ -23,12 +23,11 @@ app.get('/api/polls', function(req, res){   // Reach out to our API and return a
     Polls.find(function(err, polls) {
         if(err) throw err;
         res.json(polls);
-    })
-})
+    });
+});
 
 app.post('/api/polls', function(req, res){     // Reaches out to our API and creates polls with a POST method.
     var title = req.body.text;
-    
     Polls.create(
         {
         "title": title
@@ -38,28 +37,24 @@ app.post('/api/polls', function(req, res){     // Reaches out to our API and cre
                 Polls.find(function(err, results) {
                     if(err) console.log(err)
                     res.json(results);
-                })
+                });
             });
     });
 
-app.delete('api/polls', function(req, res) {
-    Polls.remove({
-        _id : req.params.polls_id
-    }, function(err, polls) {
+app.delete('/api/polls/:polls_id', function(req, res) {
+    Polls.remove({_id : req.params.polls_id}, function(err, polls) {
         if(err) throw err;
-        
         Polls.find(function(err, polls){
             if(err) throw err;
-            
             res.json(polls);
-        })
-    })
-})
+        });
+    });
+});
 
 app.get('/', function(req, res) {
     res.sendFile('index.html', {root: __dirname});
-})
+});
 
 app.listen(port, function() {
     console.log("Server listening on port " + port);
-})
+});

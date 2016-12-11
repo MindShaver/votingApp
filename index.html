@@ -13,14 +13,16 @@
             <div>
             <div class="text-center">
                 <form>
-                <input type="text" ng-model="formData.text" />
+                <label for="pollName">Poll Title</label>
+                <input type="text" ng-model="formData.text" required />
                 <p>{{name}}</p>
                 <button type="submit" ng-click="createPoll()">Create Poll</button>
                 </form>
             </div>
             
-            <div ng-repeat="poll in polls">
+            <div class="contatiner" ng-repeat="poll in polls">
                 <p class="text-center">{{poll.title}}</p>
+                <a href="#" ng-click="removePoll(poll._id)">X</a>
             </div>
         </div>
         </div>
