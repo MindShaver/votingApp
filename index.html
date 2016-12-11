@@ -6,14 +6,23 @@
     <meta charset="UTF-8">
     <title>MindShaver's Polling Booth</title>
 </head>
-<body>
-    <div class="container-fluid" ng-app="votingApp">
+<body ng-app="votingApp">
+    <div class="container-fluid" ng-controller="mainController">
         <div class="jumbotron" style="margin-top: 50px">
             <h1 class="text-center">MindShaver's Polls</h1>
-            <div class="text-center" ng-controller="mainController">
-                <input type="text" ng-model="name" />
+            <div>
+            <div class="text-center">
+                <form>
+                <input type="text" ng-model="formData.text" />
                 <p>{{name}}</p>
+                <button type="submit" ng-click="createPoll()">Create Poll</button>
+                </form>
             </div>
+            
+            <div ng-repeat="poll in polls">
+                <p class="text-center">{{poll.title}}</p>
+            </div>
+        </div>
         </div>
     </div>
  
