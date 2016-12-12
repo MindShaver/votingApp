@@ -1,3 +1,7 @@
+body {
+    background-color: #9bc2cf;
+}
+
 .pollClass {
     background-color: #999;
     max-width: 500px;
@@ -12,15 +16,73 @@
     position: relative;
     float: left;
     font-size: 18px;
-   
-    
 }
 
 .pollContent {
     clear: both;
-    font-size: 400px;
+    font-size: 32px;
     text-align: center;
     color: #fff;
 }
 
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 20px auto;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+    max-width: 800px;
+    font-family: cursive, serif, "Times New Roman";
+    overflow:hidden;
+}
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+    
+    
+}
+blockquote:after {
+    color: #ccc;
+    content: close-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-left: 0.25em;
+    vertical-align: -0.4em;
+   
+    
+}
+blockquote p {
+    display: inline;
+    
+}
 
+.mainTitle {
+    font-family: cursive;
+    clear:both;
+    
+}
+
+#quoteAuthor {
+    font-size: 14px;
+    float: right;
+    padding: 1px;
+    margin-top: 10px;
+    margin-right: 45px;
+}
+
+.main {
+    background-color: #efefef;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.icons {
+    width: 60px;
+    float: right;
+    padding: 5px;
+    margin-top: -20px;
+}
